@@ -8,8 +8,9 @@ namespace ChatApp.Data
         public ChatDbContext(DbContextOptions<ChatDbContext> options) : base(options)
         {
         }
-        public DbSet<User> Users { get;}
-        public DbSet<Message> Messages { get; }
+        public DbSet<User> Users => Set<User>();
+        public DbSet<Message> Messages => Set<Message>();
+
 
     }
 }

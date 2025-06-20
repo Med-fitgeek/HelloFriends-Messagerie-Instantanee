@@ -10,10 +10,12 @@ namespace ChatApp.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AuthService _authService;
+        private readonly IConfiguration _config;
 
-        public AuthController(AuthService authService)
+        public AuthController(AuthService authService, IConfiguration config)
         {
             _authService = authService;
+            _config = config;
         }
 
         [HttpPost("register")]
@@ -32,5 +34,16 @@ namespace ChatApp.Controllers
             return Ok(new { message = "Subscription successed", user.Id, user.Username, user.Email });
 
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDto dto)
+        {
+            var token = await _authService.LoginAsync(dto, _config);
+            if (token == null)
+                return Unauthorized("Identifiants invalides");
+
+            return Ok(new { token });
+        }
+
     }
 }

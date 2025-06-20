@@ -2,20 +2,21 @@
 using ChatApp.DTOs;
 using ChatApp.Models;
 using ChatApp.Utils;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChatApp.Services
 {
     public class AuthService
     {
-        private readonly ChatDbContext _Context;
+        private readonly ChatDbContext _context;
         public AuthService(ChatDbContext context)
         {
-            _Context = context;
+            _context = context;
         }
 
         public async Task<User?> RegisterAsync(RegisterDto registerDto)
         {
-            if (_Context.Users.Any(u => u.Email == registerDto.Email))
+            if (_context.Users.Any(u => u.Email == registerDto.Email))
                 return null; // Email already exists
 
             var user = new User
@@ -25,10 +26,20 @@ namespace ChatApp.Services
                 PasswordHash = PasswordHasher.Hash(registerDto.Password)
             };
 
-            _Context.Users.Add(user);
-            await _Context.SaveChangesAsync();
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
 
             return user;
+        }
+
+        public async Task<String?> LoginAsync(LoginDto loginDto, IConfiguration config)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
+
+            if (user == null || !PasswordHasher.Verify(user.PasswordHash, loginDto.Password))
+                return null;
+
+            return JwtHelper.GenerateJwt(user, config);
         }
     }
 }
