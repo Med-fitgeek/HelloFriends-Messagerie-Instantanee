@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CrPdYKO9cDM=",
+  "dgSpecHash": "g6y36A1y6pk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nndon\\source\\repos\\ChatApp\\ChatApp.csproj",
+  "projectFilePath": "C:\\Users\\nndon\\projects\\real-time-chat-app\\chat-api\\ChatApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nndon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\nndon\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.0\\microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",
