@@ -24,5 +24,13 @@ namespace ChatApp.Controllers
                 role
             });
         }
+
+        [Authorize(Roles = "admin")]
+        [HttpGet("admin-only")]
+        public IActionResult AdminOnly()
+        {
+            return Ok("Bienvenue admin !");
+        }
+
     }
 }
