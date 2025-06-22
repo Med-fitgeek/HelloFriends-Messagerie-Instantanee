@@ -8,6 +8,17 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  private loggedIn = false;
+
+  setLoggedIn(value: boolean) {
+    this.loggedIn = value;
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedIn;
+  }
+
+
   login(credentials: { email: string; password: string }) {
     return this.http.post<{ token: string }>(`${this.apiUrl}/login`, credentials);
   }
@@ -16,9 +27,11 @@ export class AuthService {
     localStorage.setItem('auth_token', token);
   }
 
-  getToken() {
-    return localStorage.getItem('auth_token');
-  }
+  getToken(): string | null {
+  return localStorage.getItem('auth_token');
+}
+
+
 
   logout() {
     localStorage.removeItem('auth_token');
