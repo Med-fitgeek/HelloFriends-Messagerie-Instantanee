@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ChatApp.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -79,7 +80,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+builder.Services.AddSignalR();
+
+
 var app = builder.Build();
+
+app.MapHub<ChatHub>("/chatHub");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
