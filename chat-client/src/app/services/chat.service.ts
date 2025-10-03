@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
   private hubConnection!: signalR.HubConnection;
+  connectedUsers$ = new BehaviorSubject<string[]>([]);
 
   public startConnection(token?: string): void {
     if (token == null)
@@ -22,6 +24,28 @@ export class ChatService {
       .start()
       .then(() => console.log('[SignalR] Connexion établie'))
       .catch(err => console.error('[SignalR] Erreur de connexion', err));
+
+    this.hubConnection.on('ConnectedUsers', (users: string[]) => {
+    const currentUser = this.getCurrentUsername(); 
+    const filtered = users.filter(u => u !== currentUser);
+    this.connectedUsers$.next(filtered);
+  });
+
+  this.hubConnection.on('UserConnected', (user: string) => {
+    const currentUser = this.getCurrentUsername();
+    if (user !== currentUser) {
+      const current = this.connectedUsers$.value;
+      if (!current.includes(user)) {
+        this.connectedUsers$.next([...current, user]);
+      }
+    }
+  });
+
+
+    this.hubConnection.on('UserDisconnected', (user: string) => {
+      const updated = this.connectedUsers$.value.filter(u => u !== user);
+      this.connectedUsers$.next(updated);
+    });
   }
 
   // ----- Messagerie publique -----
@@ -43,4 +67,9 @@ export class ChatService {
     this.hubConnection.invoke('SendPrivateMessage', toUser, message)
       .catch(err => console.error('[SignalR] Erreur envoi message privé', err));
   }
+
+  private getCurrentUsername(): string {
+  return localStorage.getItem('username') || 'UnknownUser';
+  }
+
 }

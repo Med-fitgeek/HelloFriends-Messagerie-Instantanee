@@ -54,18 +54,4 @@ export class AuthService {
   getToken(): string | null {
   return localStorage.getItem('auth_token');
   }
-
-
-  getUsernameFromToken(): string {
-    const token = localStorage.getItem('token');
-    if (!token) return 'Utilisateur';
-
-    try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      return payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] || 'Utilisateur';
-    } catch (e) {
-      console.error('JWT parsing error', e);
-      return 'Utilisateur';
-    }
-  }
 }
