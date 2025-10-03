@@ -16,7 +16,7 @@ export class ChatSidebarComponent {
     constructor(private authService: AuthService) {}
 
   selectedConversation: string = 'public';
-  username: string = this.authService.getUsernameFromToken();
+  username: string = localStorage.getItem('username') || 'Utilisateur';
   avatarUrl: string = 'assets/img/default-avatar.png';
 
   select(conversation: string) {
