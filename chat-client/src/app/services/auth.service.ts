@@ -23,29 +23,10 @@ export class AuthService {
     return this.http.post<{ token: string }>(`${this.apiUrl}/login`, credentials);
   }
 
-  saveToken(token: string) {
-    localStorage.setItem('auth_token', token);
-  }
-
-  getToken(): string | null {
-  return localStorage.getItem('auth_token');
+  register(credentials: { username: string; email: string; password: string }) {
+    return this.http.post(`${this.apiUrl}/register`, credentials)
+  }  
   
-}
-
-
-getUsernameFromToken(): string {
-  const token = localStorage.getItem('token');
-  if (!token) return 'Utilisateur';
-
-  try {
-    const payload = JSON.parse(atob(token.split('.')[1]));
-    return payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] || 'Utilisateur';
-  } catch (e) {
-    console.error('JWT parsing error', e);
-    return 'Utilisateur';
-  }
-}
-
   logout() {
     localStorage.removeItem('auth_token');
     this.router.navigate(['/login']);
@@ -53,5 +34,26 @@ getUsernameFromToken(): string {
 
   isAuthenticated(): boolean {
     return !!this.getToken();
+  }
+  saveToken(token: string) {
+    localStorage.setItem('auth_token', token);
+  }
+
+  getToken(): string | null {
+  return localStorage.getItem('auth_token');
+  }
+
+
+  getUsernameFromToken(): string {
+    const token = localStorage.getItem('token');
+    if (!token) return 'Utilisateur';
+
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return payload["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] || 'Utilisateur';
+    } catch (e) {
+      console.error('JWT parsing error', e);
+      return 'Utilisateur';
+    }
   }
 }

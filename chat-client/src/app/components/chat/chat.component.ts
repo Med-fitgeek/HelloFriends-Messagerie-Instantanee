@@ -3,6 +3,12 @@ import { ChatService } from '../../services/chat.service';
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+interface Message {
+  from: string;
+  content: string;
+  timestamp: Date;
+}
+
 @Component({
   selector: 'app-chat',
   standalone: true,
@@ -11,16 +17,20 @@ import { CommonModule } from '@angular/common';
   styleUrl: './chat.component.scss'
 })
 export class ChatComponent implements OnInit {
-  messages: { user: string, message: string }[] = [];
+  currentUser: string = localStorage.getItem('username') || 'me';
   currentMessage = '';
-  currentUser = 'User'; // à récupérer depuis le token
+  messages: Message[] = [];
+
 
   constructor(private chatService: ChatService) {}
 
   ngOnInit(): void {
     this.chatService.startConnection(localStorage.getItem("auth_token") || "");
     this.chatService.addReceiveMessageListener((user, message) => {
-      this.messages.push({ user, message });
+      this.messages.push({ 
+        from: user, 
+        content: message, 
+        timestamp: new Date() });
     });
   }
 

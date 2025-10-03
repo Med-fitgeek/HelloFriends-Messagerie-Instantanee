@@ -10,14 +10,14 @@ import { NgZone } from '@angular/core';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']   // ← doit pointer ici
 })
 export class LoginComponent {
   email = '';
   password = '';
   error: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router,  private zone: NgZone
-) {}
+  constructor(private authService: AuthService, private router: Router,  private zone: NgZone) {}
 
   onLogin() {
   this.authService.login({ email: this.email, password: this.password }).subscribe({

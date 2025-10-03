@@ -3,7 +3,7 @@ import { ChatService } from '../../services/chat.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-interface PrivateMessage {
+interface Message {
   from: string;
   content: string;
   timestamp: Date;
@@ -20,7 +20,7 @@ export class ChatPrivateComponent implements OnInit {
   @Input() recipient!: string; // le destinataire choisi
   currentUser: string = localStorage.getItem('username') || 'me'; // exemple
   newMessage: string = '';
-  messages: PrivateMessage[] = [];
+  messages: Message[] = [];
 
   constructor(private chatService: ChatService) {}
 

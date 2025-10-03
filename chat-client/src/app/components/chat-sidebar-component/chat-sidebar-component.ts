@@ -17,7 +17,7 @@ export class ChatSidebarComponent {
 
   selectedConversation: string = 'public';
   username: string = this.authService.getUsernameFromToken();
-  avatarUrl: string = 'assets/default-avatar.png';
+  avatarUrl: string = 'assets/img/default-avatar.png';
 
   select(conversation: string) {
     this.selectedConversation = conversation;
