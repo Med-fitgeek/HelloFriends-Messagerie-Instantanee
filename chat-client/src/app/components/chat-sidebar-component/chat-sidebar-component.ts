@@ -13,8 +13,6 @@ export class ChatSidebarComponent {
   @Input() users: string[] = [];
   @Output() selectConversation = new EventEmitter<string>();
 
-    constructor(private authService: AuthService) {}
-
   selectedConversation: string = 'public';
   username: string = localStorage.getItem('username') || 'Utilisateur';
   avatarUrl: string = 'assets/img/default-avatar.png';

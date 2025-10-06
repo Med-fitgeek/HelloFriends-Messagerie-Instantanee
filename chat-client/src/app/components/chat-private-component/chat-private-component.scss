@@ -1,12 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0; 
+}
+
 .chat-private {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 10px;
+  flex: 1;
+  overflow: hidden;
 }
 
 .messages {
-   display: flex;               // important !
+  flex: 1;
+  min-height: 0;
+  display: flex;               // important !
   flex-direction: column;      // empile verticalement
   gap: 6px;
   overflow-y: auto;

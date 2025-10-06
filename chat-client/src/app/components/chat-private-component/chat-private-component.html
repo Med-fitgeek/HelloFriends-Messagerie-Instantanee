@@ -1,7 +1,5 @@
 <!-- chat-private.component.html -->
 <div class="chat-private">
-  <h3>Conversation privée avec {{ recipient }}</h3>
-
   <div class="messages">
     <div *ngFor="let msg of messages" [ngClass]="{'me': msg.from === currentUser, 'other': msg.from !== currentUser}">
       <b>{{ msg.from }}:</b> {{ msg.content }}

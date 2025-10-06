@@ -1,6 +1,7 @@
 .chat-layout {
   display: flex;
-  height: 100vh; // prend toute la hauteur de la fenêtre
+  flex-direction: row;
+  height: 100vh;
   background-color: #f0f2f5;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
