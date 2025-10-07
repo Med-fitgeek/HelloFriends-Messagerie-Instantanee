@@ -38,11 +38,11 @@ namespace ChatApp.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
-            var token = await _authService.LoginAsync(dto, _config);
-            if (token == null)
+            var response = await _authService.LoginAsync(dto, _config);
+            if (response == null)
                 return Unauthorized("Identifiants invalides");
 
-            return Ok(new { token });
+            return Ok(response);
         }
 
     }

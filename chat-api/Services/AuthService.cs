@@ -32,14 +32,20 @@ namespace ChatApp.Services
             return user;
         }
 
-        public async Task<String?> LoginAsync(LoginDto loginDto, IConfiguration config)
+        public async Task<LoginResponseDTO?> LoginAsync(LoginDto loginDto, IConfiguration config)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginDto.Email);
 
             if (user == null || !PasswordHasher.Verify(user.PasswordHash, loginDto.Password))
                 return null;
 
-            return JwtHelper.GenerateJwt(user, config);
+            var token =  JwtHelper.GenerateJwt(user, config);
+
+            return new LoginResponseDTO
+            {
+                Token = token,
+                Username = user.Username
+            };
         }
     }
 }
