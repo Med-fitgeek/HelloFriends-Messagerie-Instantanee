@@ -19,6 +19,9 @@ ChatApp – Application de messagerie en temps réel
 
 Le projet a été **déployé sur Azure DevOps** avec mise en place de **pipelines CI/CD**, garantissant des déploiements fiables et rapides.
 
+![Page d'accueil](./chat-client/src/assets/img/home.png)
+
+
 🛠️ Technologies utilisées
 --------------------------
 
@@ -90,9 +93,6 @@ Le projet a été **déployé sur Azure DevOps** avec mise en place de **pipelin
         
     *   Pipeline **CD** : Déploiement automatique sur Azure Web App après build réussi.
         
-
-📂 Architecture du projet
--------------------------
 
 
 💻 Installation et lancement
