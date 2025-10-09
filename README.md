@@ -1,6 +1,8 @@
 ChatApp – Application de messagerie en temps réel
 =================================================
 
+![Page d'accueil](./chat-client/src/assets/img/home.png)
+
 🚀 Présentation
 ---------------
 
@@ -18,9 +20,6 @@ ChatApp – Application de messagerie en temps réel
     
 
 Le projet a été **déployé sur Azure DevOps** avec mise en place de **pipelines CI/CD**, garantissant des déploiements fiables et rapides.
-
-![Page d'accueil](./chat-client/src/assets/img/home.png)
-
 
 🛠️ Technologies utilisées
 --------------------------
