@@ -1,4 +1,4 @@
-ChatApp – Application de messagerie en temps réel
+HelloFriends – Application de messagerie en temps réel
 =================================================
 
 ![Page d'accueil](./chat-client/src/assets/img/home.png)
