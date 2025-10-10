@@ -6,7 +6,7 @@ HelloFriends – Application de messagerie en temps réel
 🚀 Présentation
 ---------------
 
-**ChatApp** est une application web de messagerie instantanée moderne, développée avec **Angular 17** pour le frontend et **.NET 8** pour le backend. Elle permet aux utilisateurs de :
+**HelloFriends** est une application web de messagerie instantanée moderne, développée avec **Angular 17** pour le frontend et **.NET 8** pour le backend. Elle permet aux utilisateurs de :
 
 *   Envoyer des **messages publics** dans un salon commun.
     
