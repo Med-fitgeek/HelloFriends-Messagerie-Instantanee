@@ -95,7 +95,7 @@
         },
         {
           "DockedWidth": 1268,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -104,10 +104,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "DTOs\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:43:55.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T13:43:55.985Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "Services\\AuthService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAC8AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:41:55.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:41:55.79Z"
             },
             {
               "$type": "Document",
@@ -145,8 +139,7 @@
               "RelativeToolTip": "Models\\Message.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:03:17.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:03:17.396Z"
             },
             {
               "$type": "Document",
@@ -156,7 +149,7 @@
               "RelativeDocumentMoniker": "Hubs\\ChatHub.cs",
               "ToolTip": "C:\\Users\\nndon\\projects\\real-time-chat-app\\chat-api\\Hubs\\ChatHub.cs",
               "RelativeToolTip": "Hubs\\ChatHub.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-24T15:39:49.465Z",
               "EditorCaption": ""
@@ -171,8 +164,7 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAowCwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:50:00.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:50:00.59Z"
             },
             {
               "$type": "Document",
@@ -184,8 +176,7 @@
               "RelativeToolTip": "DTOs\\LoginResponseDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T14:51:50.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T14:51:50.707Z"
             },
             {
               "$type": "Document",
@@ -197,8 +188,7 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:00:35.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:00:35.354Z"
             },
             {
               "$type": "Document",
@@ -210,8 +200,7 @@
               "RelativeToolTip": "DTOs\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:35:00.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:35:00.563Z"
             },
             {
               "$type": "Document",
@@ -223,8 +212,7 @@
               "RelativeToolTip": "Utils\\PasswordHasher.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:35:57.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:35:57.45Z"
             },
             {
               "$type": "Document",
@@ -236,8 +224,7 @@
               "RelativeToolTip": "Utils\\JwtHelper.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T13:44:31.197Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T13:44:31.197Z"
             },
             {
               "$type": "Document",
@@ -249,8 +236,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-20T12:17:02.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:17:02.725Z"
             },
             {
               "$type": "Document",
@@ -262,8 +248,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:09:00.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:09:00.237Z"
             },
             {
               "$type": "Document",
@@ -324,6 +309,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-06-22T17:43:05.308Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

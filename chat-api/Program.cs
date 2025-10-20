@@ -1,20 +1,25 @@
 using ChatApp.Data;
+using ChatApp.Hubs;
 using ChatApp.Services;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using ChatApp.Hubs;
+using System.Text;
+using static System.Net.WebRequestMethods;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+var allowedOrigins = builder.Configuration["AllowedOrigins"]
+    ?? "https://hellofriends-frontend-htc4avakgcg2d0ex.westeurope-01.azurewebsites.net";
 
 // Ajouter la policy CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:4200", "http://127.0.0.1:4200") // Autoriser Angular
+        policy.WithOrigins(allowedOrigins) // Autoriser Angular
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
